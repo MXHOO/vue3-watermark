@@ -2,7 +2,7 @@
   "name": "vue3-watermark-test",
   "version": "0.0.6",
   "type": "module",
-  "main": "./dist/vue3-watermark.-test.umd.js",
+  "main": "./dist/vue3-watermark-test.umd.js",
   "module": "./dist/vue3-watermark-test.es.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -17,7 +17,9 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint . --config eslint.config.js",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "vue": "^3.5.13"
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
+    "@eslint/js": "^9.21.0",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "@typescript-eslint/parser": "^8.25.0",
     "@vitejs/plugin-vue": "^5.2.1",
@@ -33,12 +36,25 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.2",
+    "eslint-flat-config-utils": "^2.0.1",
     "eslint-plugin-vue": "^9.32.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
     "prettier": "^3.5.2",
     "typescript": "~5.7.2",
+    "typescript-eslint": "^8.25.0",
     "vite": "^6.2.0",
+    "vue-eslint-parser": "^9.4.3",
     "vue-tsc": "^2.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MXHOO/vue3-watermark.git"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }

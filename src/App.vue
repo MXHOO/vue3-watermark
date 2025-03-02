@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <div>
-  </div>
+  <div>vue3水印组件</div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
